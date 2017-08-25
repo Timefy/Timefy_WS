@@ -15,10 +15,10 @@ public class Clients {
     // Populating with a mock data object
     init(){
         data = [
-            Client(id: "0001", name: "Save Sarah Conner"),
-            Client(id: "0002", name: "Ping Skynet"),
-            Client(id: "0003", name: "Help Kyle Reese"),
-            Client(id: "0004", name: "Kill Marcus Wright")
+            Client(id: "0001", name: "Jhon Connor"),
+            Client(id: "0002", name: "Skynet"),
+            Client(id: "0003", name: "US.gov"),
+            Client(id: "0004", name: "Kyle Reese")
         ]
     }
     
