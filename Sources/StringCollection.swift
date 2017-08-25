@@ -8,12 +8,24 @@
 
 import Foundation
 
+
+//    enum _URI {
+//        enum user {
+//            case list
+//            case individual
+//            var json
+//        }
+//    }
+// return append(self.value)- ish
+
     struct URI {
         static let root = "/"
-        static let users = "/users"
-        static let people = "/people"
-        static let usersJson = "/users/json"
-        static let peopleJson = "/people/json"
+        static let users = "users"
+        static let tasks = "tasks"
+        static let projects = "project"
+        static let usersJson = "users/json"
+        static let tasksJson = "tasks/json"
+        static let projectsJson = "projects/json"
     }
     
     struct ContentType {
