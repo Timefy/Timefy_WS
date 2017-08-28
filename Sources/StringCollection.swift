@@ -22,10 +22,15 @@ import Foundation
         static let root = "/"
         static let users = "users"
         static let tasks = "tasks"
+        static let clients = "clients"
         static let projects = "project"
+        static let timeLogs = "timelog"
         static let usersJson = "users/json"
         static let tasksJson = "tasks/json"
+        static let clientsJson = "clients/json"
         static let projectsJson = "projects/json"
+        static let timeLogsJson = "timelogs/json"
+
     }
     
     struct ContentType {

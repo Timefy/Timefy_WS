@@ -62,7 +62,6 @@ routes.add(method: .post, uri: URI.usersJson, handler: {
 //	}
 //)
 
-
 // MARK: - Task POST/GET
 
 // Adding a route to handle the GET TimefyUsers list URL
@@ -76,8 +75,6 @@ routes.add(method: .get, uri: URI.tasks, handler: {
     response.completed()
 }
 )
-
-
 
 // Adding a route to handle the POST TimefyUsers add via JSON
 routes.add(method: .post, uri: URI.tasksJson, handler: {
@@ -93,7 +90,7 @@ routes.add(method: .post, uri: URI.tasksJson, handler: {
 
 // MARK: - Project POST/GET
 
-// Adding a route to handle the GET TimefyUsers list URL
+// Adding a route to handle the GET Project list URL
 routes.add(method: .get, uri: URI.projectsJson, handler: {
     request, response in
     
@@ -105,10 +102,8 @@ routes.add(method: .get, uri: URI.projectsJson, handler: {
 }
 )
 
-
-
-// Adding a route to handle the POST TimefyUsers add via JSON
-routes.add(method: .post, uri: URI.tasksJson, handler: {
+// Adding a route to handle the POST Project add via JSON
+routes.add(method: .post, uri: URI.projectsJson, handler: {
     request, response in
     
     let projects = Projects()
@@ -119,6 +114,57 @@ routes.add(method: .post, uri: URI.tasksJson, handler: {
 }
 )
 
+// MARK: - Client POST/GET
+
+// Adding a route to handle the GET Client list URL
+routes.add(method: .get, uri: URI.clientsJson, handler: {
+    request, response in
+    
+    let clients = Clients()
+    
+    response.setHeader(.contentType, value: URI.usersJson)
+    response.appendBody(string: clients.list())
+    response.completed()
+}
+)
+
+// Adding a route to handle the POST Client add via JSON
+routes.add(method: .post, uri: URI.clientsJson, handler: {
+    request, response in
+    
+    let clients = Clients()
+    
+    response.setHeader(.contentType, value: ContentType.JasonApplication)
+    response.appendBody(string: clients.add(request.postBodyString!))
+    response.completed()
+}
+)
+
+// MARK: - TimeLog POST/GET
+
+// Adding a route to handle the GET Project list URL
+routes.add(method: .get, uri: URI.timeLogsJson, handler: {
+    request, response in
+    
+    let timeLogs = TimeLogs()
+    
+    response.setHeader(.contentType, value: URI.usersJson)
+    response.appendBody(string: timeLogs.list())
+    response.completed()
+}
+)
+
+// Adding a route to handle the POST Project add via JSON
+routes.add(method: .post, uri: URI.timeLogsJson, handler: {
+    request, response in
+    
+    let timeLogs = TimeLogs()
+    
+    response.setHeader(.contentType, value: ContentType.JasonApplication)
+    response.appendBody(string: timeLogs.add(request.postBodyString!))
+    response.completed()
+}
+)
 
 
 server.addRoutes(routes)
